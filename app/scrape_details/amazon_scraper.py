@@ -172,7 +172,7 @@ class AmazonReviewScraper:
 
         options.add_experimental_option("detach", True)
         # Uncomment the following options to run Chrome in headless mode and other configurations if needed
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--disable-gpu")
@@ -277,7 +277,7 @@ class AmazonReviewScraper:
 
     def scrape_and_save(self):
         self.navigate_to_product()
-        self.click_see_more_button()
+        # self.click_see_more_button()
         review_data = self.scrape_reviews()
         self.driver.quit()
 

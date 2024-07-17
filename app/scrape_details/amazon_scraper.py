@@ -189,7 +189,8 @@ class AmazonReviewScraper:
 
         # Use webdriver_manager to manage the ChromeDriver
         # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-        driver = webdriver.Chrome(options=options)
+        # driver = webdriver.Chrome(options=options)
+        driver = webdriver.Remote('http://10.210.91.141:4444/wd/hub', webdriver.DesiredCapabilities.CHROME)
         return driver
 
     def navigate_to_product(self):

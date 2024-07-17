@@ -75,3 +75,4 @@ websockets==10.4
 wsproto==1.2.0
 zipp==3.18.2
 webdriver_manager
+chromedriver_binary

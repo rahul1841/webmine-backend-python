@@ -157,7 +157,8 @@ import time
 from textblob import TextBlob
 from collections import Counter
 import re
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
+
 
 class AmazonReviewScraper:
     def __init__(self, product_link, desired_review_count):
@@ -171,11 +172,11 @@ class AmazonReviewScraper:
 
         options.add_experimental_option("detach", True)
         # Uncomment the following options to run Chrome in headless mode and other configurations if needed
-        # options.add_argument("--headless")
-        # options.add_argument("--no-sandbox")
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
         # options.add_argument("--disable-dev-shm-usage")
-        # options.add_argument("--disable-gpu")
-        # options.add_argument("--window-size=1920x1080")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--window-size=1920x1080")
         # options.add_argument("--remote-debugging-port=9222")
         # options.add_argument("--disable-extensions")
         # options.add_argument("--proxy-server='direct://'")
@@ -186,7 +187,8 @@ class AmazonReviewScraper:
         # options.add_argument("--disable-popup-blocking")
 
         # Use webdriver_manager to manage the ChromeDriver
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver = webdriver.Chrome(chrome_options=options)
         return driver
 
     def navigate_to_product(self):

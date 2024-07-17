@@ -277,7 +277,7 @@ class AmazonReviewScraper:
 
     def scrape_and_save(self):
         self.navigate_to_product()
-        # self.click_see_more_button()
+        self.click_see_more_button()
         review_data = self.scrape_reviews()
         self.driver.quit()
 

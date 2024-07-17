@@ -170,7 +170,7 @@ class AmazonReviewScraper:
     def init_driver(self):
         options = webdriver.ChromeOptions()
 
-        options.add_experimental_option("detach", True)
+        # options.add_experimental_option("detach", True)
         # Uncomment the following options to run Chrome in headless mode and other configurations if needed
         # options.add_argument("--headless=new")
         options.add_argument("--no-sandbox")
